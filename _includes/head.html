@@ -9,6 +9,8 @@
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.5.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
@@ -22,4 +24,8 @@
   {% for script in site.head_scripts %}
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
+{% endif %}
+
+{% if page.use_math %}
+  {% include mathjax_support.html %}
 {% endif %}
